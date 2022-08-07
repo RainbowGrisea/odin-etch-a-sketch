@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const block = [];
+const colorButton = document.querySelector('.randomColor');
 
 // Create a 16 div (rows), in each 16 div (block) 
 for (let i = 0; i < 9; i++) {
@@ -46,10 +47,21 @@ createNewGrid.addEventListener('click', () => {
     };
 });
 
-function randomizeColor() {
-    return ('rgb(' + Math.floor(Math.random() * 255 + 1) + ',' + + Math.floor(Math.random() * 255 + 1) + ',' + Math.floor(Math.random() * 255 + 1) + ')');
-}
-
+// Fill the background
 function fill() {
-    this.style.backgroundColor = randomizeColor();
-}
+    if (colorButton.textContent === 'Rainbow color: ON') {
+        this.style.backgroundColor = ('rgb(' + Math.floor(Math.random() * 255 + 1) + ',' + + Math.floor(Math.random() * 255 + 1) + ',' + Math.floor(Math.random() * 255 + 1) + ')');
+    };
+    if (colorButton.textContent === 'Rainbow color: OFF') {
+        this.style.backgroundColor = 'black';
+    };
+};
+
+
+colorButton.addEventListener('click', function colorSwitch() {
+    if (this.textContent === 'Rainbow color: OFF') {
+        this.textContent = 'Rainbow color: ON';
+    } else if (this.textContent === 'Rainbow color: ON') {
+        this.textContent = 'Rainbow color: OFF';
+    };
+});

@@ -24,10 +24,16 @@ body {
     flex: 1;
 }
 
-.new {
-    display: block;
-    margin: 20px auto;
+.btnsBar {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
+
+.new {
+    margin-right: 20px;
+}
+
 
 h1 {
     text-align: center;
